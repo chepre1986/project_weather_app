@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Loader from "react-loader-spinner";
 
 export default function Weather(props) {
   let [temperature, setTemperature] = useState(null);
@@ -36,6 +37,12 @@ export default function Weather(props) {
       </div>
     );
   } else {
-    return <h1> Loading... </h1>;
+    return <h1>  <Loader
+    type="Puff"
+    color="orange"
+    height={100}
+    width={100}
+    timeout={3000} 
+  /> </h1>;
   }
 }
